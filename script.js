@@ -33,9 +33,9 @@ function calculate() {
     if (/[+\-*/%]$/.test(currentInput.slice(-1))) {
       deleteDigit();
     }
-    currentInput = eval(
-      currentInput.replace(/÷/g, "/").replace(/×/g, "*")
-    ).toString();
+    currentInput = eval(currentInput.replace(/÷/g, "/").replace(/×/g, "*"))
+      .toFixed(5)
+      .toString();
     updateDisplay();
   } catch {
     currentInput = "Error";
